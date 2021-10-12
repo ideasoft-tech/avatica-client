@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uy.ideasoft.test</groupId>
+	<artifactId>CalciteClient</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.00-SNAPSHOT</version>
+	<name>CalciteClient</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
+		<log4j.version>1.2.15</log4j.version>
+		<slf4j.version>1.6.1</slf4j.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.1</version>
+				<configuration>
+					<tagBase>http://?????/Repos-PI/PLAC-LIB</tagBase>
+					<releaseProfiles>release</releaseProfiles>
+					<goals>deploy</goals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>iso-8859-1</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.calcite.avatica/avatica -->
+	<dependency>
+		<groupId>org.apache.calcite.avatica</groupId>
+		<artifactId>avatica</artifactId>
+		<version>1.18.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.calcite</groupId>
+		<artifactId>calcite-core</artifactId>
+		<version>1.27.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.calcite.avatica</groupId>
+		<artifactId>avatica-core</artifactId>
+		<version>1.18.0</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-simple</artifactId>
+		<version>${slf4j.version}</version>
+	</dependency>
+
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.2.15</version>
+	</dependency>
+	
+	<!--dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.19</version>
+	</dependency-->
+	
+	<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>3.12.10</version>
+	</dependency>
+	
+	<!--dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongodb-jdbc</artifactId>
+		<version>1.0.0</version>
+	</dependency-->
+	
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>4.13.2</version>
+	</dependency>
+
+	</dependencies>
+
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>Nexus Release Repository</name>
+			<url>http://vmlx-garq-prod:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>Nexus Snapshots Repository</name>
+			<url>http://vmlx-garq-prod:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>
